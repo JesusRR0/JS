@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 9</title>
+</head>
+<body>
+    <script>
+        
+        var txtSalario=prompt("Introduzca su salario");
+        var txtEdad = prompt("Introduzca su edad");
+
+        
+        salario=parseInt(txtSalario); 
+        edad=parseInt(txtEdad); 
+       
+
+
+        if(salario>2000){
+            
+            document.write("su salario es "+salario);
+        }else if(salario >=1000 && salario <=2000){
+
+            if(edad>45){
+                let porcS=salario*0.03;
+                console.log(porcS);
+                salario = salario+porcS;
+                
+                document.write("su salario es "+salario);
+            }else{
+                porcS=salario*0.1;
+                salario = salario+porcS;
+                document.write("su salario es "+salario);
+            }
+
+        }else if(salario <1000){
+
+            if(edad<30){
+                salario = 1100;
+                
+                document.write("su salario es "+salario);
+            }else if(edad >30 && edad <45){
+                porcS=salario*0.03;
+                salario = salario+porcS;
+                document.write("su salario es "+salario);
+
+            }else if(edad>45){
+                porcS=salario*0.15;
+                salario = salario+porcS;
+                document.write("su salario es "+salario);
+
+            }
+
+        }
+    </script>
+</body>
+</html>
