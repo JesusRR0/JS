@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="parrafo"></p>
+    <button id="hora" onclick="Hora()">Hora</button>
+    <button id="diaS" onclick="DiaSemana()">DiaSemana</button>
+    <button id="diaM" onclick="DiaMes()">DiaMes</button>
+    <button id="mes"  onclick="Mes()">Mes</button>
+    <button id="year" onclick="Year()">Año</button>
+    <button id="fLocal" onclick="FechaLocal()">Fecha Local</button>
+    
+    <script>
+        function Hora(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.getHours()} </h1>`;
+        }
+
+        function DiaSemana(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.getDay()} </h1>`;
+        }
+
+        function DiaMes(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.getDate()} </h1>`;
+
+        }
+
+        function Mes(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.getUTCDay()} </h1>`;
+        }
+
+        function Year(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.getFullYear()} </h1>`;
+        }
+
+        function FechaLocal(){
+            let time = new Date();
+            document.getElementById('parrafo').innerHTML =`<h1> ${time.toLocaleDateString()} </h1>`;
+        }
+        
+
+        
+
+    </script>
+</body>
+</html>
