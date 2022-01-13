@@ -8,29 +8,65 @@
 </head>
 <body>
     <script>
+        //Creacion de la clase Punto
         function Punto(x,y){
             this.x = x;
-            thix.y = y;
-
+            this.y = y;
+            //funcion constructora que pondrá x,y a 0
             this.CONSTRUCTOR = function(x=0, y=0){
-                this.x = x;
-                thix.y = y;
-            }
-
-            this.cambiar = function(x,y){
                 this.x = x;
                 this.y = y;
             }
+            //funcion que obtiene el punto x,y y lo modifica mostrando un mensaje
+            this.cambiar = function(x,y){
+                this.x = x;
+                this.y = y;
 
+                console.log(`Se cambiaron las coordenadas a (${this.x},${this.y})`);
+            }
+            //funcion que crea un objeto con los mismos datos 
             this.copia = function(){
-                copia = new Punto(this.x, this.y);
+                let copia = new Punto(this.x, this.y);
                 console.log(copia);
             }
-
+            //funcion que compara dos puntos diferentes
             this.iguales = function(q){
-                
+                //si x,y del objeto es igual al x,y del otro objeto mostrara el mensaje
+                if(this.x == q.x && this.y == q.y){
+                    console.log("Son puntos iguales");
+                    //sino mostrara otro mensaje
+                }else{
+                    console.log("Son puntos desiguales");
+                }
+            }
+
+            //funcion que suma x,y del primer objeto con las del segundo
+            this.suma = function(q){
+                this.x += q.x;
+                this.y += q.y;
+
+                console.log(`Las suma de las coordenadas son (${this.x},${this.y})`);
+            }
+            //funcion toString que muestra por consola el punto x,y del objeto 
+            this.toString = function(){
+                console.log(`(${this.x},${this.y})`);
             }
         }
+        //creacion de objetos y empleo de funciones
+        let p1 = new Punto(3,5);
+        let p2 = new Punto(5,1);
+
+        p1.toString();
+        p2.toString();
+        p1.copia();
+        p1.cambiar(6,7);
+        p1.iguales(p2);
+        p1.suma(p2);
+        
+        
+
+        
+
     </script>
 </body>
 </html>
