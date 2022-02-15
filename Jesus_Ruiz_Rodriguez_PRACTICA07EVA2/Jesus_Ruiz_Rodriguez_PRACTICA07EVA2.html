@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="principal">
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, animi cum? Soluta officiis sunt alias dolorem recusandae eligendi praesentium illo debitis asperiores minus porro suscipit magnam unde, veritatis consectetur. Soluta.</li>
+        <li>Eum, dicta! Deleniti iure minus aliquid, atque recusandae illum excepturi accusamus, quia doloremque necessitatibus corporis non commodi tempore reiciendis hic nulla incidunt maiores natus, saepe dignissimos assumenda harum? Quia, velit.</li>
+        <li>Dolor, ratione doloremque tenetur numquam vel reprehenderit labore distinctio, perferendis sunt incidunt, illum iste consectetur accusamus et nostrum fugit cum maiores corrupti perspiciatis. Velit, quis? Repudiandae quis unde cum hic.</li>
+        <li>Molestias eum reprehenderit incidunt saepe culpa? Et voluptates laudantium aut. Quia, doloribus. Tempore vero, laborum deserunt, quo, similique cum pariatur architecto ex dolorum iure id nisi. Commodi explicabo illum exercitationem!</li>
+        <li>Vel voluptatum adipisci laborum repellat. Saepe quidem adipisci autem magni ipsa. Aliquid libero facere tempora quam porro itaque placeat facilis quos voluptates, animi dolores velit quis qui modi autem eaque!</li>
+        <li>Quae, voluptatibus blanditiis nostrum delectus repellat qui nemo facere voluptate a. Eum facilis magni sequi est repudiandae corrupti asperiores similique, animi ipsa porro placeat maiores cupiditate nesciunt quisquam maxime eius?</li>
+        <li>Quae dolorum sequi quasi hic distinctio dicta eius, nam quia minus porro necessitatibus officiis eligendi corrupti culpa, ducimus accusantium consequuntur et adipisci, facere atque quod! Voluptatibus velit ratione iure culpa!</li>
+        <li>Nostrum, expedita ipsa! Quas, facilis nulla illum harum sed ipsa voluptatem temporibus nobis excepturi laudantium maxime incidunt quis illo alias beatae, voluptatum eum! Maxime accusamus rerum ea, mollitia corporis nobis.</li>
+        <li>Dolorum doloribus ducimus consequuntur explicabo quia. Quisquam eum maxime odit ad eligendi inventore cupiditate iste nemo quibusdam, dolorem modi asperiores repellat provident recusandae neque voluptatem, dignissimos ipsam excepturi aliquid magni.</li>
+    </ol>
+
+    <script>
+        //creacion de variables
+        let permiso = false;
+        var ol = document.getElementById("principal");
+        let newparrafo = document.createElement("li");
+        newparrafo.textContent = "NUEVO PARRAFO";
+        var parrafo;
+        var nparrafo;
+        
+        //bucle de comprobacion
+        do{
+            let parrafo = prompt("¿En que posicion desea un parrafo?");
+            nparrafo = parseInt(parrafo);
+            //si se pulsa el boton cancelar se devuelve el mensaje y se acaba el bucle
+            if(parrafo == null){
+                alert("Abortando...");
+                break;
+                //si no es numero, es menor a 1 o mayor a 10 se muestra este mensaje
+            }else if(isNaN(nparrafo) || nparrafo <1 || nparrafo>10){
+                alert("Introduzca una posicion valida");
+                //sino se cumple lo anterior sale del bucle                
+            }else{
+                permiso = true;
+            }
+
+        }while(permiso==false)
+            //creacion de variable con el numero introducido
+        let parrafoSelected = document.querySelectorAll(`#principal li:nth-of-type(${nparrafo})`)[0];
+        ol.insertBefore(newparrafo,parrafoSelected);
+        
+        
+
+       
+
+       
+        
+       
+        
+    </script>
+</body>
+</html>

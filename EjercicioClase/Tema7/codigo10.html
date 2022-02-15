@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="principal1">
+        <p> Soy el primer párrafo </p>
+        <p> Soy el segundo párrafo </p>
+        <p> Soy el tercer párrafo </p>
+    </main>
+    <script>
+        let main = document.getElementById("principal1");
+        let nuevoP = document.createElement("p");
+        nuevoP.innerHTML="soy el nuevo <strong>tercer</strong> parrafo"
+        main.insertBefore(nuevoP);
+    </script>
+</body>
+</html>

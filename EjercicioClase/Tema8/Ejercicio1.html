@@ -1,0 +1,11 @@
+<p>¡clickéame!</p>
+<script>
+
+    function mensaje() {
+        alert("¡Me has clickeado!");
+        // p.removeEventListener("click", mensaje);
+    }
+
+    let p = document.querySelector("p");
+    p.addEventListener("click", mensaje);
+</script>

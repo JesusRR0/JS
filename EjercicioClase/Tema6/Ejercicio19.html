@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let permiso = false;
+        do{
+            var url = prompt("Introduzca un enlace");
+            if(!url.match(/^(https\:\/\/|http\:\/\/)?([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\/|[\/][a-zA-Z0-9]+)*$/)){
+                alert("Introduzca una url valida");
+                permiso = false;
+            }else{
+                alert("url valida aceptada");
+                permiso = true;
+            }
+        }while(permiso == false)
+    </script>
+</body>
+</html>
