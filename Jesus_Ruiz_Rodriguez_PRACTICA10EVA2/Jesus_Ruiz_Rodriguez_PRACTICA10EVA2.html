@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 10</title>
 </head>
-<body id="body">
+<body>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quidem eius omnis necessitatibus iure pariatur. Eaque ratione incidunt voluptatum, magnam dolores non, expedita iste nostrum delectus ex, aliquam nesciunt saepe.</p>
     <p>Sunt assumenda ab nam eos dolore sit animi. Quidem, repellat necessitatibus repudiandae, deleniti nam aperiam modi commodi sit ipsam molestias eligendi vero vel laborum, minima eum. Alias itaque quia ipsam!</p>
     <p>Sit libero animi praesentium aliquam vitae veritatis consequatur suscipit necessitatibus, consequuntur autem totam ea eius officiis voluptatibus quae illum placeat est vero asperiores, architecto voluptas! Officiis veniam perferendis sunt unde.</p>
@@ -58,19 +58,28 @@
     <p>Ipsa, optio quidem, modi aut in ex error eligendi quia pariatur explicabo atque. Delectus voluptas sunt consequuntur asperiores non ipsa iste laborum, rerum expedita repellendus atque perspiciatis doloribus id accusantium!</p>
     <p>Ex velit, iusto reiciendis aut voluptatem minima dicta accusantium aliquam at nulla a qui, libero harum quidem ipsum placeat illum eum soluta accusamus repellendus. Voluptates explicabo recusandae cupiditate accusantium amet.</p>
     
-    <div id="cuadro" onmousemove="mover()"><p>Hola caracola</p></div>
+    <!-- creamos un div que utilizaremos para el cuadro del ejercicio -->
+    <div id="cuadro"><p>Hola caracola</p></div>
     <script>
-
-        let body= document.getElementById("body");
+        // creamos una variable y le asignamos el id del div creado anteriormente
         let cuadro = document.getElementById("cuadro");
 
-        body.addEventListener('mousemove',mover);
+        // se crea un evento al mover el raton que modifica las caracteristicas del div
+        document.addEventListener('mousemove',function (e){            
+            // anchura
+            cuadro.style.width="8vw";
+            // altura
+            cuadro.style.height="6vw";
+            // color de fondo
+            cuadro.style.backgroundColor="yellow";
+            // posicion absoluta para que se pueda mover libremente por la pantalla
+            cuadro.style.position="absolute";
+            // pixeles asignados a la parte superior del div
+            cuadro.style.top= `${e.clientY}px`;
+            // pixeles asignados a la parte lateral izquierda del div
+            cuadro.style.left= `${e.clientX}px`;
+        });
        
-        function mover(e){
-            cuadro.innerHTML = `${e.clientX}, ${e.clientY}`;
-        };
-
-       mover(body);
     </script>
 </body>
 </html>

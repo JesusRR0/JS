@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <div><p id="pulse">Pulse Alt+F12 y obtenga una nueva imagen de fondo</p></div>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        #pulse{
+            background-color: black;
+            color:whitesmoke;
+            text-align: center;
+            width:55%;
+            border-radius:7px;
+            height:20vw;
+            padding: 5vw;
+        }
+    </style>
+    
+    <script>
+        let parrafo = document.getElementById("pulse");
+        
+        document.addEventListener('keydown', (e) =>{
+            console.log(`Key "${e.key}" about to be input  [event: beforeinput]`);
+            
+        });
+        
+        document.addEventListener('keydown', (a) =>{
+            console.log(`Key "${a.key}" about to be input  [event: beforeinput]`);
+
+        });
+
+
+        
+    </script>
+</body>
+</html>
