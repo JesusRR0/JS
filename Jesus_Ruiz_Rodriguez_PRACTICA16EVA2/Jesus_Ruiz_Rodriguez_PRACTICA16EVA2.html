@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if(contadorCookie == 'is not defined'){
+            
+        // }else{
+
+            if(confirm("Esta página usa una cookie para almacenar el número de visitas que hace cada usuario. Si está conforme con ello, pulse Sí. De otro modo la página no realizará su labor y eliminará las cookies existentes.")){
+            let contador = 1;
+            let caducidad = 60*60*24*365;
+            document.cookie = `contadorCookie=${contador};max-age=${caducidad};path=/`;
+
+                let arrayCookie = document.cookie.split(";");
+
+                for (let miCookie of arrayCookie){
+                let [nombre,valor] = miCookie.split("=");
+                console.log (`La cookie "${nombre}" tiene el valor "${valor}"`);
+                }
+                
+            }else{
+
+            }
+        // }
+        
+    </script>
+</body>
+</html>
